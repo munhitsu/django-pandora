@@ -24,9 +24,12 @@ return a sensible default if the key is not available:
 
 from UserDict import UserDict
 try:
-    from threading import local
+    from gevent.local import local
 except ImportError:
-    from django.utils._threading_local import local
+    try:
+        from threading import local
+    except ImportError:
+        from django.utils._threading_local import local
 
 
 class Box(UserDict):

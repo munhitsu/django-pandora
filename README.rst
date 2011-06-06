@@ -16,6 +16,10 @@ The most common use case for **django-pandora** might be to store the current
 request in Pandora's box to make it available in places of your code that
 doesn't get the request passed in as argument.
 
+Extra
+-----
+Added explicit usage of gevent.local when available
+
 Installation
 ------------
 
